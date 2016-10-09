@@ -1,0 +1,90 @@
+.header {
+    background-color:#222;
+    padding:6px 0px;
+}
+
+.header .dropdown {
+    display:inline-block;
+    margin-top:4px;
+}
+
+.header ul.submenu {
+    margin-top:13px;
+}
+
+.header .dropdown > li > a {
+    padding:0px;
+}
+
+body .header a {
+    color:#FFF;
+}
+
+body .header .dropdown .menu a {
+    text-align:left;
+    color:#222;
+}
+
+body {
+    background-color:#F5F5F5;
+}
+
+.body {
+    margin-top:20px;
+}
+
+.footer {
+    background-color:#67727A;
+    padding:20px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size:1.4em;
+}
+
+.to-do-item {
+    background-color:#FFF;
+    margin-bottom:20px;
+    padding:10px;
+}
+
+.to-do-item .created-on ,
+.to-do-item label {
+    color:#A7A7A7;
+}
+
+.to-do-item label {
+    margin-bottom:0px;
+}
+
+.to-do-item input.button {
+    margin-bottom:0px;
+}
+.to-do-item .button-group .button {
+    float:right;
+}
+
+.to-do-item input[name="title"],
+.to-do-item textarea {
+    border:none;
+    box-shadow:none;
+    background-color:#FFF;
+    color:#222;
+    margin-bottom:0px;
+    cursor:pointer;
+}
+.to-do-item input[name="title"]:focus ,
+.to-do-item textarea:focus {
+    border:none;
+    box-shadow:0px 0px 2px 0px #2199e8;
+    background-color:#FFF;
+    cursor:text;
+}
+
+.to-do-item input.button {
+    background-color:#2199e8;
+}
+
+form#delete-account {
+    display:inline;
+}

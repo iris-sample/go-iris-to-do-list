@@ -1,0 +1,10 @@
+{% set scripts = "" %}
+{% macro script(script) %}
+    {% set scripts = scripts + script %}
+{% endmacro %}
+
+{% macro printScripts() %}
+    {% if scripts %}
+        <script>{{ scripts }}</script>
+    {% endif %}
+{% endmacro %}

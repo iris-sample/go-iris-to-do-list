@@ -1,0 +1,68 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+    {% include "_menu-private.html" %}
+
+    <h1>Create a To Do</h1>
+    <form action='/create' method='post'>
+        <input type='text' placeholder='Title...' name='title' required/>
+        <textarea placeholder='Description' name='description'></textarea>
+        <input class='button' type='submit' value='Create'/>
+    </form>
+
+    {% if not ToDos|length %}
+
+        <p><b>You have nothing to do, Yippie!</b></p>
+
+    {% else %}
+    
+        <ol>
+        {% for item in ToDos %}
+            <li class='to-do-item'>
+                <div class='row'>
+                    <div class='small-8 columns'>
+                        <div class='created-on'>Created On : {{ item.CreatedOn }}</div>
+                    </div>
+                    <div class='small-4 columns button-group'>
+                        <form action='/delete/{{ item.ID }}' method='post'>
+                            <input class='button alert' type='submit' value='X' title='Delete this To Do Item'/>
+                        </form>
+                        <form action='/complete/{{ item.ID }}' method='post'>
+                            <input class='button success' type='submit' value='Completed' title='Mark this To Do Item Completed'/>
+                        </form>
+                    </div>
+                </div>
+                <form action='/update/{{ item.ID }}' method='post'>
+                    <div class='row'>
+        
+                        <div class='small-1 columns'>
+                            <label class='middle'>Title</label>
+                        </div>
+                        <div class='small-11 columns'>
+                            <input type='text' placeholder='Title...' value='{{ item.Title }}' name='title' required title='Click to edit the title'/>
+                        </div>
+        
+                    </div>
+        
+                    <div class='row'>
+        
+                        <div class='small-1 columns'>
+                            <label class='middle'>Description</label>
+                        </div>
+                        <div class='small-11 columns'>
+                            <textarea placeholder='Description' name='description' title='Click to edit the description'>{{ item.Description }}</textarea>
+                        </div>
+        
+                    </div>
+        
+                    <input class='button' type='submit' value='Update'/>
+                </form>
+            </li>
+        {% endfor %}
+        </ol>
+
+    {% endif %}
+
+{% endblock %}
+

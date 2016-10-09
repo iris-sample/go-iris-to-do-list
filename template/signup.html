@@ -1,0 +1,25 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+
+    {% include "_menu-public.html" %}
+
+    <h1>Signup</h1>
+    <form method='POST'>
+        <label>Name
+            <input type='text' name='name' required/>
+        </label>
+        <label>Email
+            <input type='email' name='email' required/>
+        </label>
+        <label>Password
+            <input type='password' name='password' required/>
+        </label>
+        <label>Verify Password
+            <input type='password' name='password_verify' required/>
+        </label>
+
+        <input type='submit' value='Signup' class='button'/>
+    </form>
+{% endblock %}
+
